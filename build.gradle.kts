@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.4.10"
+    kotlin("multiplatform") version "1.3.72"
 }
 
 group = "org.example"
@@ -8,6 +8,7 @@ version = "1.0-SNAPSHOT"
 repositories {
     jcenter()
     maven(url = "https://kotlin.bintray.com/kotlinx/")
+    maven(url = "https://dl.bintray.com/korlibs/korlibs/")
 }
 
 kotlin {
@@ -25,7 +26,9 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(kotlin("stdlib-common"))
-                api("org.jetbrains.kotlinx:kotlinx-datetime:0.1.0")
+                //api("org.jetbrains.kotlinx:kotlinx-datetime:0.1.0")
+                api("com.soywiz.korlibs.korio:korio:1.11.13")
+
             }
         }
         val commonTest by getting {
